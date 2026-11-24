@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StepStyle - Catálogo de zapatos</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #222;
+            background-color: #fff;
+            line-height: 1.5;
+        }
+
+        header {
+            background-color: #f7f3ee;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e8e3dd;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #8b6b4f;
+        }
+
+        .boton-menu, .boton-negro {
+            display: inline-block;
+            background-color: #171717;
+            color: white;
+            text-decoration: none;
+            padding: 11px 22px;
+            border-radius: 25px;
+            font-size: 14px;
+        }
+
+        .inicio {
+            background-color: #f7f3ee;
+            padding: 75px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .texto-inicio {
+            max-width: 560px;
+        }
+
+        .pequeno {
+            color: #8b6b4f;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 42px;
+            line-height: 1.15;
+            margin-bottom: 18px;
+        }
+
+        .texto-inicio > p:not(.pequeno) {
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .zapato-grande {
+            width: 310px;
+            min-height: 220px;
+            background-color: #e9e2d9;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .circulo {
+            font-size: 75px;
+            margin-bottom: 8px;
+        }
+
+        .zapato-grande h2 {
+            letter-spacing: 3px;
+            font-size: 19px;
+        }
+
+        .zapato-grande p {
+            color: #666;
+            font-size: 13px;
+        }
+
+        .catalogo {
+            padding: 65px 7%;
+        }
+
+        .catalogo h2, .sistema h2, .nosotros h2 {
+            font-size: 32px;
+            margin-bottom: 22px;
+        }
+
+        .filtros {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 22px;
+        }
+
+        .filtros a {
+            color: #333;
+            text-decoration: none;
+            border: 1px solid #d8d8d8;
+            border-radius: 20px;
+            padding: 7px 17px;
+            font-size: 13px;
+        }
+
+        .filtros a:hover {
+            background-color: #171717;
+            color: white;
+        }
+
+        .nota-fotos {
+            color: #777;
+            font-size: 12px;
+            margin-bottom: 18px;
+        }
+
+        .productos {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .producto {
+            border: 1px solid #e3e3e3;
+            border-radius: 12px;
+            padding: 14px;
+            background-color: #fff;
+        }
+
+        .producto img {
+            width: 100%;
+            height: 155px;
+            object-fit: contain;
+            background-color: #f1f1f1;
+            border-radius: 9px;
+            margin-bottom: 12px;
+        }
+
+        .producto .categoria {
+            color: #777;
+            font-size: 13px;
+        }
+
+        .producto h3 {
+            font-size: 17px;
+            margin: 3px 0 7px;
+        }
+
+        .precio {
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .producto a {
+            display: block;
+            text-align: center;
+            background-color: #171717;
+            color: white;
+            text-decoration: none;
+            padding: 9px;
+            border-radius: 7px;
+            font-size: 13px;
+        }
+
+        .producto a:hover, .boton-menu:hover, .boton-negro:hover {
+            background-color: #8b6b4f;
+        }
+
+        .sistema {
+            background-color: #f7f3ee;
+            padding: 60px 7%;
+            display: flex;
+            justify-content: space-between;
+            gap: 45px;
+        }
+
+        .texto-sistema {
+            max-width: 430px;
+        }
+
+        .texto-sistema p:not(.pequeno) {
+            color: #666;
+        }
+
+        .lista-sistema {
+            width: 48%;
+        }
+
+        .lista-sistema div {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            padding: 13px 0;
+            border-bottom: 1px solid #ded8d1;
+        }
+
+        .lista-sistema span {
+            color: #8b6b4f;
+            font-weight: bold;
+        }
+
+        .nosotros {
+            padding: 60px 7%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+        }
+
+        .nosotros p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .nosotros ol {
+            padding-left: 20px;
+        }
+
+        .nosotros li {
+            margin-bottom: 7px;
+        }
+
+        footer {
+            background-color: #171717;
+            color: white;
+            text-align: center;
+            padding: 28px 15px;
+        }
+
+        footer h2 {
+            margin-bottom: 5px;
+        }
+
+        footer p {
+            color: #ccc;
+            font-size: 13px;
+        }
+
+        @media (max-width: 900px) {
+            .productos {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .inicio {
+                padding-top: 55px;
+                padding-bottom: 55px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 13px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .inicio, .sistema {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .zapato-grande {
+                width: 100%;
+            }
+
+            .productos {
+                grid-template-columns: 1fr;
+            }
+
+            .lista-sistema {
+                width: 100%;
+            }
+
+            .nosotros {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">StepStyle</div>
+
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="#sistema">Sistema</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+            </ul>
+        </nav>
+
+        <a href="#catalogo" class="boton-menu">Ver zapatos</a>
+    </header>
+
+    <section id="inicio" class="inicio">
+        <div class="texto-inicio">
+            <p class="pequeno">CATÁLOGO DE CALZADO</p>
+            <h1>Encuentra el calzado que va contigo.</h1>
+            <p>Conoce nuestros zapatos y consulta su modelo, marca, categoría, talla, color, precio y stock.</p>
+            <a href="#catalogo" class="boton-negro">Ver catálogo</a>
+        </div>
+
+        <div class="zapato-grande">
+            <div class="circulo">👟</div>
+            <h2>STEPSTYLE</h2>
+            <p>Calzado para cada estilo</p>
+        </div>
+    </section>
+
+    <section id="catalogo" class="catalogo">
+        <p class="pequeno">NUESTRO CATÁLOGO</p>
+        <h2>Elige tu estilo</h2>
+
+        <div class="filtros">
+            <a href="#catalogo">Todos</a>
+            <a href="#deportivo">Deportivo</a>
+            <a href="#clasico">Clásico</a>
+            <a href="#elegante">Elegante</a>
+            <a href="#casual">Casual</a>
+        </div>
+
+        <p class="nota-fotos">Fotografías de referencia. Los precios y el stock mostrados son datos de ejemplo del proyecto.</p>
+
+        <div class="productos">
+            <article class="producto" id="deportivo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Air_Force_1.JPG" alt="Nike Air Force 1">
+                <p class="categoria">Deportivo</p>
+                <h3>Nike Air Force 1</h3>
+                <p class="precio">$189.900</p>
+                <a href="#nosotros">Ver información</a>
+            </article>
+
+            <article class="producto" id="clasico">
+                <img src="https://assets.adidas.com/images/w_600%2Cf_auto%2Cq_auto/e7d77d715f17473ba1f3aa48011dc53d_9366/Tenis_Grand_Court_UNISEX_Blanco_EF0101_01_standard.jpg" alt="adidas Grand Court">
+                <p class="categoria">Clásico</p>
+                <h3>adidas Grand Court</h3>
+                <p class="precio">$209.900</p>
+                <a href="#nosotros">Ver información</a>
+            </article>
+
+            <article class="producto" id="elegante">
+                <img src="https://static.dafiti.com.co/p/vizzano-4974-7642772-1-cart.jpg" alt="Vizzano Tacón Alto">
+                <p class="categoria">Elegante</p>
+                <h3>Vizzano Tacón Alto</h3>
+                <p class="precio">$239.900</p>
+                <a href="#nosotros">Ver información</a>
+            </article>
+
+            <article class="producto" id="casual">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Puma_Suede.jpg" alt="Puma Suede">
+                <p class="categoria">Casual</p>
+                <h3>Puma Suede</h3>
+                <p class="precio">$219.900</p>
+                <a href="#nosotros">Ver información</a>
+            </article>
+        </div>
+    </section>
+
+    <section id="sistema" class="sistema">
+        <div class="texto-sistema">
+            <p class="pequeno">SISTEMA</p>
+            <h2>Organiza la información de tu tienda.</h2>
+            <p>StepStyle representa la información principal que puede manejar una tienda de zapatos.</p>
+        </div>
+
+        <div class="lista-sistema">
+            <div><span>01</span><p>Registrar productos y sus características</p></div>
+            <div><span>02</span><p>Consultar precio y disponibilidad</p></div>
+            <div><span>03</span><p>Organizar productos por categoría</p></div>
+            <div><span>04</span><p>Controlar el stock de zapatos</p></div>
+        </div>
+    </section>
+
+    <section id="nosotros" class="nosotros">
+        <div>
+            <p class="pequeno">SOBRE STEPSTYLE</p>
+            <h2>Una forma sencilla de mostrar tu catálogo.</h2>
+        </div>
+
+        <div>
+            <p>Este proyecto presenta un catálogo web para una tienda de zapatos, usando una estructura sencilla de HTML y CSS.</p>
+            <ol>
+                <li>Selecciona una categoría.</li>
+                <li>Elige un zapato.</li>
+                <li>Consulta su información.</li>
+            </ol>
+        </div>
+    </section>
+
+    <footer>
+        <h2>StepStyle</h2>
+        <p>Catálogo de zapatos.</p>
+    </footer>
+</body>
+</html>
